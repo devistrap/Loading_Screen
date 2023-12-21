@@ -1,0 +1,42 @@
+.nav{
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.welcome{
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-size: 26px;
+    display: inline-block;
+    
+}
+
+.date {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-size: 26px;
+
+}
+
+.login{
+    display: inline;
+    height: 30px;
+    width: 50px;
+    padding: 0;
+    padding-top: 2%;
+    margin: 0;
+    color: blue;
+    text-decoration: underline;
+    float: right;
+}
+
+.login:hover{
+    cursor: pointer;
+}

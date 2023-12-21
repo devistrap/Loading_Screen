@@ -1,0 +1,29 @@
+.Weather{
+    width: 40%;
+    height: 300px;
+    background-color: rgb(109, 102, 102);
+    margin-left: 1%;
+    display: block;
+
+
+}
+
+h2{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.weather-item{
+    font-size: larger;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-decoration: solid;
+}
