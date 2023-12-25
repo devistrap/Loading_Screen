@@ -7,7 +7,13 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-   
+    const [isVisible, setIsVisible] = useState(true);
+
+
+    const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     let options = {
@@ -21,22 +27,21 @@ const Login = () => {
         }
     }
     
-        console.log(options)
+       
      fetch('http://localhost:5000/login', options )
     .then(response => response.json())
-    .then(data => setMessage(data))
-    .then(message => {
-        if(message['username'] === username && message['password'] === password){
-            console.log('ok')
-        }
-        else{
-            console.log('not ok')
-        }
-    })
-    
+    .then(data => {setMessage(data)})
+    .catch(err => console.log(err))
+    console.log(message[0])
+    if(message[0] == undefined){
+        console.log('login is incorrect')
+        toggleVisibility()
+}
+else if(message[0] != undefined){
+        console.log('login is correct')
+        toggleVisibility()
         
-    
-    
+    }
     
     
     
@@ -61,6 +66,7 @@ const Login = () => {
                     </label>
                     <br /><br />
                     <input type="submit" className='submit' value="Submit" />
+                    {isVisible != true && <p className='error'>your password or email is incorrect</p>}
                 </div>
                 <p>{JSON.stringify(message)}</p>
             </form>
